@@ -10,8 +10,6 @@ At the end of this guide, you should have:
 * Added manual reporting screens
 * Extended the SDK to populate metadata
 
-?> If you like video tutorials instead, we have [a Youtube tutorial]() going through the installation process
-
 Let's get started!
 
 ## Installing the SDK
@@ -19,7 +17,7 @@ Let's get started!
 The easiest way to install the SDK is using the _install from git_ option in the package manager. In this section
 we'll cover how to install it using the Unity package manager.
 
-!> Note, the SDK has been tested to work with versions 2019.4.x. Using other versions might cause issues with your installation. If you encounter any problems, you can always [contact us](/support#contact)
+!> Note, the SDK has been tested to work with versions 2019.x. Using other versions might cause issues with your installation. If you encounter any problems, you can always [contact us](/support#contact)
 
 To set up using Github:
 1. Open up Unity to an existing project, or create a new project.
