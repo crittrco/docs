@@ -23,8 +23,6 @@ To set up using Github:
 1. Open up Unity to an existing project, or create a new project.
 2. Follow the instructions from the [official Unity documentation](https://docs.unity3d.com/Manual/upm-ui-giturl.html) using Crittr Unity SDK's [Github repo](https://github.com/crittrco/unity-sdk).
 
-?> We recommend using a specific release instead of using the master branch. You should use the tag of the newest release found [here](https://github.com/crittrco/unity-sdk/releases). Append the tag to the end of the clone url (e.g. with `v0.1.0`: `https://github.com/crittrco/unity-sdk.git#v0.1.0`)
-
 Once you have installed the SDK, you now have access the the Crittr API. Included in the SDK are the `CrittrReporter` and `CrittrCanvas` prefabs which exist in the `Assets/Prefabs` directory. For reference, `CrittrReporter` sends the reports whereas `CrittrCanvas` displays the manual reports UI.
 
 ![Crittr prefabs](/media/prefabs.PNG)
