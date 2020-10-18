@@ -7,19 +7,45 @@
   <meta name="description" content="Description" />
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" />
+  <link rel="stylesheet" href="media/dark.min.css" />
   <link rel="icon" href="media/favicon.ico" />
 </head>
 <body>
   <div id="app"></div>
   <script>
+    let isDark = localStorage.isDark == "true";
     window.$docsify = {
       name: 'Crittr',
       repo: '',
-      logo: '/media/crittr_logo.png width=40%',
+      logo: isDark ? '/media/crittr_logo_white.png width=40%' : '/media/crittr_logo.png width=40%',
       themeColor: '#F4B652',
       subMaxLevel: 2,
       auto2top: true,
-      loadSidebar: true
+      loadSidebar: true,
+      plugins: [
+        function(hook) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+            '<a id="theme_toggle" href="#">' + (isDark ? 'Light Theme' : 'Dark Theme') + '</a>',
+            '</footer>'
+          ].join('');
+
+          hook.afterEach(function(html) {
+            return html + footer;
+          });
+
+          hook.doneEach(function() {
+            if(isDark && !document.body.classList.contains("dark")) document.body.classList.toggle('dark');
+            document.querySelector('#theme_toggle').onclick = function(event) {
+              isDark = !isDark;
+              document.body.classList.toggle('dark'); 
+              document.querySelector('.app-name-link img').src = isDark ? '/media/crittr_logo_white.png' : '/media/crittr_logo.png';
+              localStorage.isDark = isDark;
+            }
+          });
+        }
+      ]
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
